@@ -1,0 +1,32 @@
+; ******* Steps for flashing in OSPI mode************************************
+;clear the macro buffer
+flushrecv
+
+;ecu needs time to boot
+pause 5
+sendln "pidin -f n"
+;ecu needs time to export the activity
+pause 5
+
+;disconnect COM port
+disconnect 0
+;close teraterm
+closett
+end
+;************************************************************************************
+
+:abort
+
+;send commad to exit reprogram
+sendln "run exit_reprogram"
+; echo error cather line
+sendln "echo ERROR-ABORT!!!"
+pause 1
+;set exit code
+setexitcode 1
+;disconnect COM port
+disconnect 0
+;close teraterm
+closett
+end
+;************************************************************************************

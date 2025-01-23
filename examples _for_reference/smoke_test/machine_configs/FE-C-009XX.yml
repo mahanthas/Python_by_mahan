@@ -1,0 +1,7 @@
+PowerSupply:
+  com_port: COM8
+ECU:
+  com_port: COM4
+  hw_version: 5
+Tools:
+  FG_tool: C:\tools\FrameGrabber

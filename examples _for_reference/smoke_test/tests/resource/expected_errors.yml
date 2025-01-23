@@ -1,0 +1,84 @@
+expected_errors:
+  - pattern: ":Enabled"
+    rvpsvc_count: 2
+    adascomp_count: 2
+    adasvisuservice_count: 2
+    rvpchmsl_count: 2
+  - pattern: ":\\[tivxEventWait:.*] Event timed-out."
+    rvpsvc_count: 2
+    adascomp_count: 3
+    adasvisuservice_count: 4
+    rvpchmsl_count: 1
+  - pattern: ":\\[checkStatus:.*] ERROR: .* \\(UNKNOWN STATUS\\); Error dequeueing obj_detection_postproc Graph dof current input \\[obj_detection_postproc]"
+    adascomp_count: 1
+  - pattern: ":\\[ownReleaseReferenceInt:.*] Invalid reference"
+    adascomp_count: 24
+    adasvisuservice_count: 6
+  - pattern: ":\\[ownContextSendControlCmd:.*] Command ack message returned failure cmd_status: "
+    adasvisuservice_count: 100
+  - pattern: ":\\[monitoringThreadFunction:.*] A Timeout was detected in"
+    rvpsvc_count: 3
+    adascomp_count: 1
+    adasvisuservice_count: 10
+  - pattern: ":\\[svcProducerNV12Dequeue:.*] Failed while attempting to dequeue image from svc producer graph"
+    rvpsvc_count: 1
+  - pattern: ":\\[svcProducerY12UV8Dequeue:.*] Failed while attempting to dequeue y_plane from svc producer graph"
+    rvpsvc_count: 1
+  - pattern: ":\\[svcProducerNV12Dequeue:.*] NV12 Dequeue is not succesful with status"
+    rvpsvc_count: 1
+  - pattern: ":\\[OnIterate:.*] FrameSyncManager Monitoring: enqueue not possible. Status:"
+    adasvisuservice_count: 300
+  - pattern: ":\\[OnIterate:.*] FrameSyncManager Monitoring: dequeue not possible Status:"
+    adasvisuservice_count: 300
+  - pattern: ":\\[monitoringEnqueueWithTime:.*] FrameSyncProc: enqueueing an image with number"
+    adasvisuservice_count: 300
+  - pattern: ":\\[monitoringDequeue:.*] FrameSyncProc: dequeueing an image with number 0 not allowed. Was the metadata propagated?"
+    adasvisuservice_count: 300
+  - pattern: ":\\[svcProducerNV12Dequeue:.*] NV12 Dequeue is not succesful with status = .*"
+    rvpsvc_count: 1
+  - pattern: ":\\[checkStatus:.*] ERROR: .* \\(UNKNOWN STATUS\\); Error dequeueing DOFSpatialProc Graph input \\[dof_spatial_proc]"
+    adascomp_count: 1
+  - pattern: ":\\[checkStatus:.*] ERROR: .* \\(UNKNOWN STATUS\\); Error dequeueing obj_detection_preproc Graph Y input \\[obj_detection_preproc]"
+    adascomp_count: 1
+  - pattern: ":\\[master_thread:.*] CONSUMER: Error while dequeuing buffer"
+    adascomp_count: 1
+    adasvisuservice_count: 1
+  - pattern: ":\\[traceEndRunCycle:.*\\] \\[AOS TRACING\\] Tracker not found for run cycle id .*"
+    adascomp_count: 12
+  - pattern: ":\\[tivxQueueGet:.*] no elements found in que"
+    rvpsvc_count: 2
+    adascomp_count: 6
+    adasvisuservice_count: 2
+  - pattern: ":\\[rbvxElparserProcessInterface:.*] ELPARSER: ERROR_FRAME rx'd for chId .*, camera_status is 1. "
+    rvpsvc_count: 24
+    rvpchmsl_count: 4
+  - pattern: ":\\[ownPosixObjectDeInit:.*] Deiniting mutex at index: .* failed"
+    rvpsvc_count: 1
+    adascomp_count: 1
+    adasvisuservice_count: 1
+    rvpchmsl_count: 1
+  - pattern: ":\\[vxWaitGraph:.*] tivxEventWait\\(\\) failed."
+    adasvisuservice_count: 1
+  - pattern: ":\\[chmslTailgateProducerNV12Dequeue:.*] NV12 Dequeue is not succesful with status "
+    rvpchmsl_count: 1
+  - pattern: ":\\[chmslTailgateProducerNV12Dequeue:.*] Failed while attempting to dequeue image from chmsl tailgate producer graph"
+    rvpchmsl_count: 1
+  - pattern: ":\\[tivxEventWait:.*] Event wait failed."
+    rvpsvc_count: 2
+    adascomp_count: 1
+  - pattern: ":\\[tivxEventWait:.*] Mutex unlock failed"
+    rvpsvc_count: 2
+    adascomp_count: 1
+  - pattern: ":\\[checkStatus:.*] ERROR: .* \\(FAILURE\\); Error dequeueing obj_detection_preproc Graph Y input \\[obj_detection_preproc]"
+    adascomp_count: 1
+  - pattern: ":\\[consumer_backchannel:.*] CONSUMER: Error while dequeuing buffer"
+    adascomp_count: 1
+    adasvisuservice_count: 4
+  - pattern: ":\\[reqAllNodeErrorStatus:.*] Error sending node command for idx "
+    adasvisuservice_count: 80
+  - pattern: ":\\[customMonitorGraph:.*] chmsltg is in timeout!!"
+    adasvisuservice_count: 1
+  - pattern: ":\\[customMonitorGraph:.*] enqueued spare ref "
+    adasvisuservice_count: 1
+  - pattern: ":\\[customMonitorGraph:.*] enqueue count of chmsltg input not realistic: "
+    adasvisuservice_count: 350

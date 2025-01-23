@@ -1,0 +1,138 @@
+# !!!!!!!!!!!!!!!!!!     IMPORTANT NOTICE    !!!!!!!!!!!!!!!!!!!!
+# This file contains the common values for all hosts. For values
+# that are different for each test bench please create and use
+# dedicated <HOST_NAME>.yml
+# !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+ECU:
+  test_tools_directory: /test_tools/
+  runtime_tool_path: /test_tools/runtime_tool
+  runtime_tool_log: /test_tools/runtime_tool.log
+  test_log_path: /tmp/stage2-log.txt
+  rvp_test_log_path: /tmp/rvp-log.txt
+  vipers1_script_path: /opt/bosch/prk/bin/
+  vrte_path: /opt/vrte/bin/
+  tmp_path: /tmp/
+  ip_address: 10.1.0.32
+  svs_port: 20000
+
+  vipers1_activity_list:
+    - ./rvp-svc
+    - ./viper-s1-gateway
+    - ./adasvisuservice
+    - ./rvp-chmsl-tg
+    - sbin/screen
+
+  vipers1_logs:
+    - log_adasvisuservice.txt
+    - log_rvpsvc.txt
+    - log_adascomp.txt
+    - log_rvpchmsl.txt
+    - measurement.csv
+    - start_vision-p1.sh
+    - start_vision-p2.sh
+    - pidin_f_n.log
+
+  svs_dumps:
+   - pic_0.uyvy
+   - pic_1.uyvy
+   - pic_2.uyvy
+
+  vipers2_activity_list:
+    - /opt/bosch/prk/bin/C2WDcomGateway_gateway  #stage2
+    - /opt/bosch/prk/bin/C2WPDMGateway_gateway
+    - /opt/bosch/prk/bin/EolPDMGateway_gateway
+    - /opt/bosch/prk/bin/EolDcomGateway_gateway
+    - /opt/bosch/prk/bin/PfcMsgGateway_gateway
+    - /opt/bosch/prk/bin/ValGateway_gateway
+    - /opt/bosch/prk/bin/FailureClusterGateway_gateway
+    - /opt/bosch/prk/bin/VhmAbstGateway_gateway
+    - /opt/bosch/prk/bin/VhmAbstBufferGateway_gateway
+    - /opt/bosch/prk/bin/DmcPipelineGateway_gateway
+    - /opt/bosch/prk/bin/IntrinsicGateway_gateway
+    - /opt/bosch/prk/bin/EolTriggerGateway_gateway
+    - /opt/bosch/prk/bin/DmcBlockage4Cam_activity
+    - /opt/bosch/prk/bin/C2W_activity
+    - /opt/bosch/prk/bin/C2WAlignDisp_activity
+    - /opt/bosch/prk/bin/C2WControl_activity
+    - /opt/bosch/prk/bin/C2WRepeater_activity
+    - /opt/bosch/prk/bin/C2WPreprocessing_activity
+    - /opt/bosch/prk/bin/FlowControl_activity
+    - /opt/bosch/prk/bin/LutAndMask4Cam_activity
+    - /opt/bosch/prk/bin/Oflow4Cam_activity
+    - /opt/bosch/prk/bin/OflowSpatial4Cam_activity
+    - /opt/bosch/prk/bin/Eol_activity
+    - /opt/bosch/prk/bin/ParaBridge_activity
+    - /opt/bosch/prk/bin/Vipers2ConfigMaster_activity
+  deploy_infos:
+    deploy_vs1_mt_sv:
+      clean_up_remote_dir: True
+      set_execute_permission: True
+      relative_sw_path: rbp_vipers1_ti_ford_cp/bin/mt_sv/
+      remote_dir: /opt/bosch/prk/bin/mt_sv/
+      exclude_file_list: []
+    deploy_vs1_resources:
+      clean_up_remote_dir: True
+      set_execute_permission: True
+      relative_sw_path: rbp_vipers1_ti_ford_cp/bin/resources/
+      remote_dir: /opt/bosch/prk/bin/resources/
+      exclude_file_list: []
+    deploy_vs1_stripped_bin:
+      clean_up_remote_dir: False
+      set_execute_permission: True
+      relative_sw_path: rbp_vipers1_ti_ford_cp/stripped_bin/
+      remote_dir: /opt/bosch/prk/bin/
+      exclude_file_list: []
+    deploy_vs1_cfgs:
+      clean_up_remote_dir: True
+      set_execute_permission: True
+      relative_sw_path: rbp_vipers1_ti_ford_cp/etc/
+      remote_dir: /opt/bosch/prk/etc/
+      exclude_file_list: []
+    deploy_vision_bin:
+      clean_up_remote_dir: False
+      set_execute_permission: True
+      relative_sw_path: rbp_vision_kernels_Neutrino/bin/
+      remote_dir: /opt/bosch/prk/bin/
+      exclude_file_list: []
+    deploy_rt_param:
+      clean_up_remote_dir: False
+      set_execute_permission: True
+      relative_sw_path: rbp_vipers1_ti_ford_cp/rt_param/
+      remote_dir: /m3/bosch/prk/rt_param/
+      exclude_file_list: []
+    deploy_nvm_dir:
+      clean_up_remote_dir: False
+      set_execute_permission: True
+      relative_sw_path: rbp_vipers1_ti_ford_cp/cdm/
+      remote_dir: /nvm/bosch/prk/rbp_vipers1_ti_ford/cdm/
+      exclude_file_list: []
+    deploy_svs_libs:
+      clean_up_remote_dir: False
+      set_execute_permission: True
+      relative_sw_path: rbp_vipers1_ti_ford_cp/shared_libs/stripped/
+      remote_dir: /usr/lib/
+      exclude_file_list: []
+
+RaspberryPi:
+  reflash_infos:
+    reflash_dsp_out_files:
+      relative_sw_path: rbp_vision_kernels_C7X/firmware/vision
+      set_execute_permission: True
+      remote_dir: /srv/tftp
+      exclude_file_list: []
+    reflash_r5f_out_files:
+      relative_sw_path: rbp_vision_kernels_R5F/firmware/vision
+      set_execute_permission: True
+      remote_dir: /srv/tftp
+      exclude_file_list: []
+
+Tools:
+  cweet_runtime_tool: C:\tools\CWEET\runtime_tool\v0.03a
+  cweet_procmem_logger: C:\tools\CWEET\procmem_logger_v002a\v0.02a\procmem_logger
+  cweet_automatic_core_dumper: C:\tools\CWEET\automatic_core_dumper\download_coredump.bat
+  teraterm_exe: C:\tools\teraterm-4.106\ttermpro.exe
+  conan_user_folder: C:\Users\cxb1fe\.conan\data
+  # This is required for pytest to collect tests correctly.
+  # If this is not set, pytest will have an error collecting tests due to none return!
+  FG_tool: C:\dummy\framegrabberpath

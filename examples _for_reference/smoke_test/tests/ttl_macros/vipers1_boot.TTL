@@ -1,0 +1,39 @@
+; ******* Steps for flashing in OSPI mode************************************
+
+;clear the macro buffer
+flushrecv
+
+;setting a timeout for wait
+timeout=50
+
+;wait for the screen prompt
+wait "completing the Vipers1 process ...."
+
+;get the activities processed on ECU
+sendln "echo pidin command executing"
+pause 2
+sendln "pidin -f n > /opt/bosch/prk/bin/pidin_f_n.log"
+pause 6
+
+;ecu needs time to execute Vipers1 binaries
+pause 80
+
+;disconnect COM port
+disconnect 0
+;close teraterm
+closett
+end
+;************************************************************************************
+
+:abort
+
+; echo error cather line
+sendln "echo ERROR-ABORT!!!"
+pause 1
+;set exit code
+setexitcode 101
+;disconnect COM port
+disconnect 0
+;close teraterm
+closett
+end

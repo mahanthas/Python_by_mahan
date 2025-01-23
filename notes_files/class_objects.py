@@ -32,3 +32,12 @@ print(f"name of collegue {c2.name} and salary is {c2.salary} belongs to dept {c2
 # where as dept is an class attribute as it same for all the objects
 # obj.attr  >>>> class.attr
 
+
+#STATIC Methods 
+class M:
+    @staticmethod  #these are called decorators
+    def hello(): #here actually we dont need to send any parameters so we make the method as static method
+        print("Hello! Welcome")
+
+m1 = M()
+m1.hello()
