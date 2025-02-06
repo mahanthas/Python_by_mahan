@@ -1,0 +1,5 @@
+PowerSupply:
+  com_port: COM3
+ECU:
+  com_port: COM4
+  hw_version: 5

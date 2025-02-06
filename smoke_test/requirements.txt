@@ -1,0 +1,13 @@
+toliman-flashing==0.1.0
+dohq-artifactory==0.8.4
+MarkupSafe==2.0.1
+
+# dev-packages:
+pytest==7.0.0
+pytest-csv==3.0.0
+pytest-html==3.2.0
+pytest-order==1.2.0
+types-PyYAML
+mypy
+flake8
+isort

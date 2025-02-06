@@ -1,0 +1,31 @@
+; ******* Steps for flashing in OSPI mode************************************
+;clear the macro buffer
+flushrecv
+;Enter synchronous communication mode
+setsync 1
+;setting a timeout for wait
+timeout=10
+
+;send commad to boot
+sendln "sync"
+pause 2
+
+;disconnect COM port
+disconnect 0
+;close teraterm
+closett
+end
+;************************************************************************************
+
+:abort
+
+; echo error cather line
+sendln "echo ERROR-ABORT!!!"
+pause 1
+;set exit code
+setexitcode 1
+;disconnect COM port
+disconnect 0
+;close teraterm
+closett
+end

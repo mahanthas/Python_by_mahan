@@ -1,0 +1,106 @@
+expected_errors:
+  - pattern: ":Enabled"
+    rvpsvc_count: 2
+    adascomp_count: 2
+    adasvisuservice_count: 2
+  - pattern: ":\\[tivxEventWait:.*] Event timed-out."
+    rvpsvc_count: 2
+    adascomp_count: 3
+  - pattern: ":\\[checkStatus:.*] ERROR: .* \\(UNKNOWN STATUS\\); Error dequeueing obj_detection_postproc Graph dof current input \\[obj_detection_postproc]"
+    adascomp_count: 1
+  - pattern: ":\\[ownReleaseReferenceInt:.*] Invalid reference"
+    adascomp_count: 24
+    adasvisuservice_count: 6
+  - pattern: ":\\[reqAllNodeErrorStatus:.*] Error sending node command for idx .* replicate idx .* with name .* in graph .*"
+    adasvisuservice_count: 100
+  - pattern: ":\\[ownContextSendControlCmd:.*] Command ack message returned failure cmd_status: "
+    adasvisuservice_count: 100
+  - pattern: ":\\[monitoringThreadFunction:.*] A Timeout was detected in"
+    rvpsvc_count: 1
+    adascomp_count: 1
+    adasvisuservice_count: 8
+  - pattern: ":\\[svcProducerNV12Dequeue:.*] Failed while attempting to dequeue image from svc producer graph"
+    rvpsvc_count: 1
+  - pattern: ":\\[svcProducerY12UV8Dequeue:.*] Failed while attempting to dequeue y_plane from svc producer graph"
+    rvpsvc_count: 1
+  - pattern: ":\\[svcProducerNV12Dequeue:.*] NV12 Dequeue is not succesful with status"
+    rvpsvc_count: 1
+  - pattern: ":\\[OnIterate:.*] FrameSyncManager Monitoring: enqueue not possible. Status:"
+    adasvisuservice_count: 2000 # adasvisu shutdown is not clean, will be reverted in SOSFORDDAT-177519
+  - pattern: ":\\[monitoringThreadFunction:.*] Polling time cannot be less than"
+    rvpsvc_count: 1
+    adasvisuservice_count: 2
+  - pattern: ":\\[OnIterate:.*] FrameSyncManager Monitoring: dequeue not possible Status:"
+    adasvisuservice_count: 2000 # adasvisu shutdown is not clean, will be reverted in SOSFORDDAT-177519
+  - pattern: ":\\[monitoringEnqueueWithTime:.*] FrameSyncProc: enqueueing an image with number"
+    adasvisuservice_count: 2000 # adasvisu shutdown is not clean, will be reverted in SOSFORDDAT-177519
+  - pattern: ":\\[monitoringDequeue:.*] FrameSyncProc: dequeueing an image with number 0 not allowed. Was the metadata propagated?"
+    adasvisuservice_count: 2000 # adasvisu shutdown is not clean, will be reverted in SOSFORDDAT-177519
+  - pattern: ":\\[svcProducerNV12Enqueue:.*] Error monitoring enqueue rvp output vx_status"
+    rvpsvc_count: 8
+  - pattern: ":\\[monitoringEnqueueWithTime:.*] VidinProdSvc: enqueueing an image with number 0 not allowed"
+    rvpsvc_count: 13
+  - pattern: ":\\[svcProducerNV12Dequeue:.*] NV12 Dequeue is not succesful with status = .*"
+    rvpsvc_count: 1
+  - pattern: ":\\[svcProducerNV12Dequeue:.*] Failed while attempting to dequeue image from svc producer graph"
+    rvpsvc_count: 1
+  - pattern: ":\\[checkStatus:.*] ERROR: .* \\(UNKNOWN STATUS\\); Error dequeueing DOFSpatialProc Graph input \\[dof_spatial_proc]"
+    adascomp_count: 1
+  - pattern: ":\\[checkStatus:.*] ERROR: .* \\(UNKNOWN STATUS\\); Error dequeueing obj_detection_preproc Graph Y input \\[obj_detection_preproc]"
+    adascomp_count: 1
+  - pattern: ":\\[master_thread:.*] CONSUMER: Error while dequeuing buffer"
+    adascomp_count: 1
+  - pattern: ":\\[traceEndRunCycle:.*\\] \\[AOS TRACING\\] Tracker not found for run cycle id .*"
+    adascomp_count: 12
+  - pattern: ":\\[tivxQueueGet:.*] no elements found in que"
+    rvpsvc_count: 2
+    adascomp_count: 6
+    adasvisuservice_count: 2
+  - pattern: ":\\[ownPosixObjectDeInit:.*] Deiniting mutex at index: .* failed"
+    rvpsvc_count: 1
+    adascomp_count: 1
+    adasvisuservice_count: 1
+  - pattern: ":\\[rbvxElparserProcessInterface:.*] ELPARSER: ERROR_FRAME rx'd for chId .*, camera_status is 1. "
+    rvpsvc_count: 24
+  - pattern: ":\\[rb_ae_imx623_estimate_luma:.*] AeKernel Invalid exposure time:"
+    rvpsvc_count: 8
+  - pattern: ":\\[monitoringDequeue:.*] VidinProdSvc: dequeueing an image with number 0 not allowed. Was the metadata propagated?"
+    rvpsvc_count: 6
+  - pattern: ":\\[monitoringDequeue:.*] VisuProc: dequeueing an image with number 0 not allowed. Was the metadata propagated?"
+    adasvisuservice_count: 6
+  - pattern: ":\\[monitoringEnqueueWithTime:.*] VisuProc: enqueueing an image with number 0 not allowed"
+    adasvisuservice_count: 6
+  - pattern: ":\\[svcProducerNV12Dequeue:.*] Error monitoring rvp output status "
+    rvpsvc_count: 6
+  - pattern: ":\\[visualizationThreadFunction:.*] Visu Monitoring: dequeue not possible"
+    adasvisuservice_count: 6
+  - pattern: ":\\[ObjDetectionPreprocThreadFunction:.*] PreProc Monitoring: dequeue not possible"
+    adascomp_count: 2
+  - pattern: ":\\[monitoringDequeue:.*] PreProc: dequeueing an image with number 0 not allowed. Was the metadata propagated?"
+    adascomp_count: 2
+  - pattern: ":\\[DOFSpatialProcThreadFunction:.*] spatial DOF Monitoring: dequeue not possible"
+    adascomp_count: 2
+  - pattern: ":\\[monitoringDequeue:.*] DOFSpatProc: dequeueing an image with number 0 not allowed. Was the metadata propagated?"
+    adascomp_count: 2
+  - pattern: ":\\[DOFSpatialProcThreadFunction:.*] spatial DOF Monitoring: failed to provide ref to dmc"
+    adascomp_count: 2
+  - pattern: ":\\[provideRefToDmc:.*] metadata from flow engine does not comply with spatial flow processing order!"
+    adascomp_count: 2
+  - pattern: ":\\[objDetectionPreprocEnqueue:.*] PreProc Monitoring: enqueue not possible"
+    adascomp_count: 2
+  - pattern: ":\\[monitoringEnqueueWithTime:.*] PreProc: enqueueing an image with number 0 not allowed"
+    adascomp_count: 2
+  - pattern: ":\\[DOFSpatialProcEnqueue:.*] DOF Monitoring: enqueue not possible"
+    adascomp_count: 2
+  - pattern: ":\\[monitoringEnqueueWithTime:.*] DOFSpatProc: enqueueing an image with number 0 not allowed"
+    adascomp_count: 2
+  - pattern: ":\\[tivxEventWait:.*] Event wait failed." # occurs during rvpsvc shutdown while waiting for graph to finish, will be fixed in SOSFORDDAT-177519
+    rvpsvc_count: 2
+    adascomp_count: 1
+  - pattern: ":\\[tivxEventWait:.*] Mutex unlock failed"  # occurs during rvpsvc shutdown while waiting for graph to finish, will be fixed in SOSFORDDAT-177519
+    rvpsvc_count: 2
+    adascomp_count: 1
+  - pattern: ":\\[checkStatus:.*] ERROR: .* \\(FAILURE\\); Error dequeueing obj_detection_preproc Graph Y input \\[obj_detection_preproc]"
+    adascomp_count: 1
+  - pattern: ":\\[consumer_backchannel:.*] CONSUMER: Error while dequeuing buffer"
+    adascomp_count: 1
