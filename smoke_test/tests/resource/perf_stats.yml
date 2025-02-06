@@ -1,0 +1,16 @@
+graphs:
+  - name: SvcProducerGraph
+    min_fps: 26
+    max_fps: 34
+  - name: DOFSpatialProcGraph
+    min_fps: 13
+    max_fps: 17
+  - name: objDetectionPreprocGraph
+    min_fps: 13
+    max_fps: 17
+  - name: VisualizationGraph
+    min_fps: 29
+    max_fps: 31
+  - name: FrameSyncMgrGraph
+    min_fps: 29
+    max_fps: 31
