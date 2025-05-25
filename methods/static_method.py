@@ -2,8 +2,14 @@
 Create a Calculator class with static methods add(a, b), subtract(a, b), multiply(a, b), and divide(a, b).
 """
 
+"""
+static method ==> a method that actually belong to the class not to the object from that class
+
+Best Utility functions that donot need access to class objects
+"""
+
 class Calculator:
-    @staticmethod
+    @staticmethod  
     def add(a,b):
         print(f"sum : {a+b}")
 

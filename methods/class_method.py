@@ -2,6 +2,10 @@
 Create a Circle class with a class attribute pi = 3.14. Write a class method set_pi() to change the value of pi.
 """
 
+"""
+Class method ==> the method where you change the values for class variables without using the class objects
+"""
+
 class Circle:
     pi = 3.142
     def __init__(self,radius):

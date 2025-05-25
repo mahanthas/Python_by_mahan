@@ -1,0 +1,9 @@
+name: Mahan
+age: 25
+skills:
+  - Python
+  - OpenVX
+  - C++
+details:
+  city: Bangalore
+  experience: 3

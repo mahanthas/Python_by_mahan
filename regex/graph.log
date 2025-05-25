@@ -1,0 +1,148 @@
+Process: rvp-svc_graph_perf       Memory allocated:  220899443 bytes
+Process: adascompute_graph_perf   Memory allocated:  262867264 bytes
+Process: adasvisu_graph_perf      Memory allocated:   87816581 bytes
+Process: rvp-chmsl-tg_graph_perf  Memory allocated:   37673771 bytes
+TOTAL                             Memory allocated:  609257059 bytes
+***GRAPH STATS***
+
+(GRAPH (PROCESS) STATE cnt:EXEC_CNT avg_duration:AVG_DURATION frame_drops:DROPS FPS: FPS
+	(NODE TARGET MIN MAX AVG [us])
+GRAPH: SvcProducerGraph (rvp-svc_graph_perf) cnt:394 avg_duration:36220 frame_drops:0 FPS:29 state: RUNNING
+                capture_svc_node         CAPTURE1      174   582809     5036
+                  el_ae_svc_node            MPU-0      240    87638      530
+             VISS_SVC_Processing       VPAC_VISS1    23203    27065    24334
+                   agwb_svc_node            MPU-0      119     1170      695
+
+GRAPH: DOFSpatialProcGraph (adascompute_graph_perf) cnt:183 avg_duration:14285 frame_drops:0 FPS:14 state: COMPLETED
+          ldc_obj_spatflow1_node        VPAC_LDC1     1755     4298     2479
+                    masking_node         DSP_C7-1      107      127      110
+       dof_temporal_pyramid_node        VPAC_MSC1     1525     4675     2672
+          ldc_obj_spatflow0_node        VPAC_LDC1     1357     3414     2050
+                    masking_node         DSP_C7-1      108      130      111
+       dof_temporal_pyramid_node        VPAC_MSC1     1535     4695     2287
+                    dofproc_node        DMPAC_DOF     3550     4150     3780
+
+GRAPH: ObjDetectionPostprocGraph (adascompute_graph_perf) cnt:182 avg_duration:42077 frame_drops:0 FPS:14 state: COMPLETED
+                    DOF_pos_node        DMPAC_DOF    40717    42049    41108
+                      MT_SV_node         DSP_C7-1     7191     7990     7423
+                  stringmap_node         DSP_C7-1     4606     4762     4636
+
+GRAPH: objDetectionPreprocGraph (adascompute_graph_perf) cnt:183 avg_duration:34531 frame_drops:0 FPS:14 state: COMPLETED
+           ldc_flow_preproc_node        VPAC_LDC1    12149    16769    13588
+       dof_temporal_pyramid_node        VPAC_MSC1    13737    18654    15319
+
+GRAPH: VisualizationGraph (adasvisu_graph_perf) cnt:376 avg_duration:42969 frame_drops:1 FPS:30 state: COMPLETED
+                     tnf_iq_node         DSP_C7-1     3359     3427     3384
+                       SV3D_Node            MPU-0     2352   219981     9283
+               SV3D_Backend_Node            MPU-1      852     6182     3586
+
+GRAPH: FrameSyncMgrGraph (adasvisu_graph_perf) cnt:375 avg_duration:32626 frame_drops:1 FPS:30 state: RUNNING
+                      VidoutNode            CSITX    30383    54203    31155
+
+GRAPH: chmslTailgateProducerGraph (rvp-chmsl-tg_graph_perf) cnt:329 avg_duration:34102 frame_drops:0 FPS:30 state: RUNNING
+           capture_chmsl_tg_node         CAPTURE2      112   117934    26107
+             el_ae_chmsl_tg_node            MPU-0       85    64864      297
+        VISS_chmsl_tg_Processing       VPAC_VISS1     5243     6533     5842
+              agwb_chmsl_tg_node            MPU-0      135      275      188
+
+[K[H[2J[H[2J[H***MEMORY CONSUMPTION***
+Process: rvp-svc_graph_perf       Memory allocated:  220899443 bytes
+Process: adascompute_graph_perf   Memory allocated:  262867264 bytes
+Process: adasvisu_graph_perf      Memory allocated:   87816581 bytes
+Process: rvp-chmsl-tg_graph_perf  Memory allocated:   37673771 bytes
+TOTAL                             Memory allocated:  609257059 bytes
+***GRAPH STATS***
+
+(GRAPH (PROCESS) STATE cnt:EXEC_CNT avg_duration:AVG_DURATION frame_drops:DROPS FPS: FPS
+	(NODE TARGET MIN MAX AVG [us])
+GRAPH: SvcProducerGraph (rvp-svc_graph_perf) cnt:454 avg_duration:36020 frame_drops:0 FPS:31 state: RUNNING
+                capture_svc_node         CAPTURE1      174   582809     4748
+                  el_ae_svc_node            MPU-0      240    87638      501
+             VISS_SVC_Processing       VPAC_VISS1    23203    27065    24347
+                   agwb_svc_node            MPU-0      119     1170      695
+
+GRAPH: DOFSpatialProcGraph (adascompute_graph_perf) cnt:213 avg_duration:14273 frame_drops:0 FPS:15 state: COMPLETED
+          ldc_obj_spatflow1_node        VPAC_LDC1     1755     4298     2463
+                    masking_node         DSP_C7-1      107      127      110
+       dof_temporal_pyramid_node        VPAC_MSC1     1525     4675     2769
+          ldc_obj_spatflow0_node        VPAC_LDC1     1357     3414     2081
+                    masking_node         DSP_C7-1      108      130      111
+       dof_temporal_pyramid_node        VPAC_MSC1     1535     4695     2285
+                    dofproc_node        DMPAC_DOF     3541     4150     3783
+
+GRAPH: ObjDetectionPostprocGraph (adascompute_graph_perf) cnt:211 avg_duration:42051 frame_drops:0 FPS:15 state: COMPLETED
+                    DOF_pos_node        DMPAC_DOF    40717    42313    41113
+                      MT_SV_node         DSP_C7-1     7191     7990     7429
+                  stringmap_node         DSP_C7-1     4606     4762     4636
+
+GRAPH: objDetectionPreprocGraph (adascompute_graph_perf) cnt:212 avg_duration:34449 frame_drops:0 FPS:15 state: RUNNING
+           ldc_flow_preproc_node        VPAC_LDC1    12149    16769    13609
+       dof_temporal_pyramid_node        VPAC_MSC1    13737    18654    15232
+
+GRAPH: VisualizationGraph (adasvisu_graph_perf) cnt:436 avg_duration:39333 frame_drops:0 FPS:30 state: COMPLETED
+                     tnf_iq_node         DSP_C7-1     3359     3668     3385
+                       SV3D_Node            MPU-0     2352   219981     9115
+               SV3D_Backend_Node            MPU-1      852     6182     3573
+
+GRAPH: FrameSyncMgrGraph (adasvisu_graph_perf) cnt:434 avg_duration:32525 frame_drops:0 FPS:30 state: RUNNING
+                      VidoutNode            CSITX    30383    54203    31125
+
+GRAPH: chmslTailgateProducerGraph (rvp-chmsl-tg_graph_perf) cnt:389 avg_duration:34029 frame_drops:0 FPS:30 state: RUNNING
+           capture_chmsl_tg_node         CAPTURE2      112   117934    26104
+             el_ae_chmsl_tg_node            MPU-0       85    64864      266
+        VISS_chmsl_tg_Processing       VPAC_VISS1     5243     6533     5845
+              agwb_chmsl_tg_node            MPU-0      135      275      188
+
+[K[H[2J[H[2J[H***MEMORY CONSUMPTION***
+Process: rvp-svc_graph_perf       Memory allocated:  220899443 bytes
+Process: adascompute_graph_perf   Memory allocated:  262867264 bytes
+Process: adasvisu_graph_perf      Memory allocated:   87816581 bytes
+Process: rvp-chmsl-tg_graph_perf  Memory allocated:   37673771 bytes
+TOTAL                             Memory allocated:  609257059 bytes
+***GRAPH STATS***
+
+(GRAPH (PROCESS) STATE cnt:EXEC_CNT avg_duration:AVG_DURATION frame_drops:DROPS FPS: FPS
+	(NODE TARGET MIN MAX AVG [us])
+GRAPH: SvcProducerGraph (rvp-svc_graph_perf) cnt:469 avg_duration:35961 frame_drops:0 FPS:31 state: RUNNING
+                capture_svc_node         CAPTURE1      174   582809     4671
+                  el_ae_svc_node            MPU-0      240    87638      495
+             VISS_SVC_Processing       VPAC_VISS1    23203    27065    24350
+                   agwb_svc_node            MPU-0      119     1170      694
+
+GRAPH: DOFSpatialProcGraph (adascompute_graph_perf) cnt:220 avg_duration:14268 frame_drops:0 FPS:15 state: COMPLETED
+          ldc_obj_spatflow1_node        VPAC_LDC1     1755     4298     2465
+                    masking_node         DSP_C7-1      107      127      110
+       dof_temporal_pyramid_node        VPAC_MSC1     1525     4675     2775
+          ldc_obj_spatflow0_node        VPAC_LDC1     1357     3414     2084
+                    masking_node         DSP_C7-1      108      130      111
+       dof_temporal_pyramid_node        VPAC_MSC1     1535     4695     2280
+                    dofproc_node        DMPAC_DOF     3541     4274     3784
+
+GRAPH: ObjDetectionPostprocGraph (adascompute_graph_perf) cnt:218 avg_duration:42039 frame_drops:0 FPS:16 state: RUNNING
+                    DOF_pos_node        DMPAC_DOF    40717    42313    41112
+                      MT_SV_node         DSP_C7-1     7191     7990     7427
+                  stringmap_node         DSP_C7-1     4606     4762     4636
+
+GRAPH: objDetectionPreprocGraph (adascompute_graph_perf) cnt:220 avg_duration:34449 frame_drops:0 FPS:15 state: COMPLETED
+           ldc_flow_preproc_node        VPAC_LDC1    12149    16769    13604
+       dof_temporal_pyramid_node        VPAC_MSC1    13737    18654    15230
+
+GRAPH: VisualizationGraph (adasvisu_graph_perf) cnt:450 avg_duration:38843 frame_drops:0 FPS:30 state: RUNNING
+                     tnf_iq_node         DSP_C7-1     3359     3668     3386
+                       SV3D_Node            MPU-0     2352   219981     9075
+               SV3D_Backend_Node            MPU-1      852     6182     3569
+
+GRAPH: FrameSyncMgrGraph (adasvisu_graph_perf) cnt:449 avg_duration:32509 frame_drops:0 FPS:30 state: RUNNING
+                      VidoutNode            CSITX    30383    54203    31134
+
+GRAPH: chmslTailgateProducerGraph (rvp-chmsl-tg_graph_perf) cnt:404 avg_duration:34012 frame_drops:0 FPS:30 state: RUNNING
+           capture_chmsl_tg_node         CAPTURE2      112   117934    26105
+             el_ae_chmsl_tg_node            MPU-0       85    64864      260
+        VISS_chmsl_tg_Processing       VPAC_VISS1     5243     6533     5844
+              agwb_chmsl_tg_node            MPU-0      135      275      188
+
+[K[H[2J[H[2J[H***MEMORY CONSUMPTION***
+Process: rvp-svc_graph_perf       Memory allocated:  220899443 bytes
+Process: adascompute_graph_perf   Memory allocated:  262867264 bytes
+Process: adasvisu_graph_perf      Memory allocated:   87816581 bytes
+Process: rvp-chmsl-tg_graph_perf  Memory all

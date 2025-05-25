@@ -20,7 +20,7 @@ class Rectangle:
             print("rectangle areas are not equal")
 
 r1 = Rectangle(10,20)
-r2 = Rectangle(30,10)
+r2 = Rectangle(20,10)
 
 r1 == r2
 
