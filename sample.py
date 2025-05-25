@@ -1,3 +1,8 @@
+def greet():
+    print("hello i am from sample file apart from if main condition")
+
+greet()
+
 if __name__ == '__main__':
     x = int(input())
     y = int(input())
